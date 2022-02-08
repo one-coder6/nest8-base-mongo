@@ -7,7 +7,7 @@ import { Logger } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   Base.install(app);
-  await app.listen(4000);
-  Logger.warn(`http://localhost:4000`, 'nestjs服务地址');
+  await app.listen(3000);
+  Logger.warn(`http://localhost:3000`, 'nestjs服务地址');
 }
 bootstrap();

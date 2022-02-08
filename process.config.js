@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'component-manager-node',
+      name: 'ghost-rider-node',
       script: 'dist/main.js',
       env: {
         NODE_ENV: 'development',

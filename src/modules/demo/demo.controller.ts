@@ -26,8 +26,10 @@ export class DemoController {
     description: '请求头需携带token',
     example: '546f9a99651c4d13b126f353048766b8',
   })
-  create(@Body() createDemoDto: CreateDemoDto, @Headers('user-agent') remark) {
-    return this.demoService.create({ ...createDemoDto, remark });
+  create(@Body() createDemoDto: CreateDemoDto, @Req() req) {
+    const ip = req.headers['user-agent'];
+    const ua = req.socket.remoteAddress;
+    return this.demoService.create(createDemoDto);
   }
 
   @ApiHeader({
@@ -37,7 +39,7 @@ export class DemoController {
     example: '546f9a99651c4d13b126f353048766b8',
   })
   @Get('queryList')
-  findAll(@Body() param, @Headers('user-agent') ua) {
+  findAll(@Body() param) {
     return this.demoService.findAll(param);
   }
 

@@ -8,6 +8,7 @@ import { MongooseConfigService } from './config/mongoose.service';
 import { CommonMiddleware } from './flow/middlewares/common.middleware';
 import { DemoModule } from './modules/demo/demo.module';
 import { TestModule } from './modules/test/test.module';
+import { GuestLogModule } from './modules/guest-log/guest-log.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { TestModule } from './modules/test/test.module';
     }),
     DemoModule,
     TestModule,
+    GuestLogModule,
   ],
   controllers: [AppController],
   providers: [AppService],
